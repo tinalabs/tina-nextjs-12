@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { FaFacebookF, FaGithub, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { Container } from "../../util/container";
@@ -46,7 +45,7 @@ export const Footer = ({ data, icon, rawData }) => {
     <footer className={`bg-gradient-to-br ${footerColorCss}`}>
       <Container className="relative" size="small">
         <div className="flex justify-between items-center gap-6 flex-wrap">
-          <Link
+          <a
             href="/"
             className="group mx-2 flex items-center font-bold tracking-tight text-gray-400 dark:text-gray-300 opacity-50 hover:opacity-100 transition duration-150 ease-out whitespace-nowrap"
           >
@@ -59,13 +58,12 @@ export const Footer = ({ data, icon, rawData }) => {
               }}
               className="inline-block h-10 w-auto group-hover:text-orange-500"
             />
-          </Link>
+          </a>
           <div className="flex gap-4">
             {data.social && data.social.facebook && (
               <a
                 className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
                 href={data.social.facebook}
-                target="_blank"
               >
                 <FaFacebookF
                   className={`${socialIconClasses} ${

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import * as React from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { useTheme } from "../layout";
@@ -67,7 +66,7 @@ export const Actions = ({
           let element = null;
           if (action.type === "button") {
             element = (
-              <Link key={index} href={action.link ? action.link : "/"}>
+              <a key={index} href={action.link ? action.link : "/"}>
                 <button
                   data-tina-field={tinaField(action)}
                   className={`z-10 relative flex items-center px-7 py-3 font-semibold text-lg transition duration-150 ease-out  rounded-lg transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 whitespace-nowrap ${
@@ -83,12 +82,12 @@ export const Actions = ({
                     />
                   )}
                 </button>
-              </Link>
+              </a>
             );
           }
           if (action.type === "link" || action.type === "linkExternal") {
             element = (
-              <Link
+              <a
                 key={index}
                 href={action.link ? action.link : "/"}
                 data-tina-field={tinaField(action)}
@@ -105,7 +104,7 @@ export const Actions = ({
                 {action.icon && (
                   <BiRightArrowAlt className={`ml-0 mr-0 w-6 h-6 opacity-80`} />
                 )}
-              </Link>
+              </a>
             );
           }
           return element;
